@@ -12,6 +12,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1", waitlistRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "API is running ✅" });
+});
 app.listen(port, () => {
   console.log(`Server up and running on port ${port}`);
 });
